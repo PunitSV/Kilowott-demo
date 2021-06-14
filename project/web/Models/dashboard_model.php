@@ -1,12 +1,10 @@
 <?php
 
     /**
-    * The home page model
+    * The dashboard page model
     */
     class dashboard_model 
     {
-
-        private $message = 'Welcome to Home page.';
 
         function __construct()
         {

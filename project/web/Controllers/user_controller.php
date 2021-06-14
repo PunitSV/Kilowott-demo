@@ -38,7 +38,7 @@
 			return $this->model->deleteUser($_POST);
         }
 		
-		public function save($params)
+		public function save()
         {	
 			global $config;
 			$id = $this->model->save($_POST);

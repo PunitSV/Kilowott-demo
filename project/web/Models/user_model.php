@@ -6,7 +6,6 @@
     class user_model 
     {
 
-        private $message = 'Welcome to Home page.';
 		public $tbl_users = 'users';
 
         function __construct()
@@ -62,7 +61,7 @@
 		public function userRecord($params)
         {
 			$db = new db(); 
-			$sql = 'SELECT * FROM users WHERE id = ? AND status =1 ';
+			$sql = 'SELECT * FROM '.$this->tbl_users.' WHERE id = ? AND status =1 ';
 			$userDetails = $db->query(array('query'=>$sql), array('id'=>$params[0]))->fetchArray();
 			return $userDetails;
         }

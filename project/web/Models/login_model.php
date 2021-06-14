@@ -6,7 +6,6 @@
     class login_model 
     {
 
-        private $message = 'Welcome to Home page.';
 		public $tbl_users = 'users';
 
         function __construct()
@@ -19,7 +18,7 @@
 			$db = new db(); 
 			$password =  hash('sha256', (get_magic_quotes_gpc() ? stripslashes($params['password']) : $params['password']));
 			
-			$sql = 'SELECT * FROM users WHERE email = ? AND password LIKE ? AND role =1 ';
+			$sql = 'SELECT * FROM '.$this->tbl_users.' WHERE email = ? AND password LIKE ? AND role =1 ';
 			$user_auth = $db->query(array('query'=>$sql), array('email'=>$params['email'], 'password'=>$password))->fetchArray();
 
 			if(is_array($user_auth) && !empty($user_auth['id'])){
@@ -50,7 +49,7 @@
         {
 			$db = new db(); 
 			
-			$sql = 'SELECT * FROM users WHERE email = ? ';
+			$sql = 'SELECT * FROM '.$this->tbl_users.' WHERE email = ? ';
 			$details = $db->query(array('query'=>$sql), array('email'=>$params['email']))->fetchArray();
 			if(is_array($details) && !empty($details['id'])){
 				$title="Forgot Password";
