@@ -1,11 +1,7 @@
 # Kilowott-demo
 
 ## Project Setup
-• Copy all files from project folder directly to htdocs folder
-
-• Change the path of project and db configuration in /config/config.php file 
-
-•	Change the path in  /js/script.js file
+•	Copy entire  khushboo folder directly to htdocs folder
 
 •	Import db queries from dbSql folder
 
