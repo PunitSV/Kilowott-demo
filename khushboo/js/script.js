@@ -1,7 +1,9 @@
 
+const url ="http://localhost/khushboo/";
+
 function login(){
 	$.post(
-	"http://localhost/login/authenticate/",
+	url+"login/authenticate/",
 	  {
 		email: $('#email').val(),
 		password: $('#password').val()
@@ -9,7 +11,7 @@ function login(){
 	  function(data, status){
 		  var data = JSON.parse(data);
 		 if(data['status_code'] == 200){
-			 window.location.href = 'http://localhost/dashboard/';
+			 window.location.href = url+'dashboard/';
 		 }
 		 else{
 			 alert(data.msg);
@@ -22,14 +24,14 @@ function deleteUser(id){
 	var r = confirm("Do you really want to delete?");
 	 if (r == true) {
 		$.post(
-		"http://localhost/user/delete/",
+		url+"user/delete/",
 		  {
 			id: id
 		  },
 		  function(data, status){
 			  var data = JSON.parse(data);
 			 if(data['status_code'] == 200){
-				window.location.href = 'http://localhost/dashboard/';
+				window.location.href = url+'dashboard/';
 			 }
 			 else{
 				 alert(data.msg);

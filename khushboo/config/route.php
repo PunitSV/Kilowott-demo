@@ -3,6 +3,11 @@
 $tmp_url_array = array();
 $tmp_url_array = explode("/", $url_str);
 
+if (in_array($config['project_folder'], $tmp_url_array)){
+			array_shift($tmp_url_array);
+		}
+
+
 if($tmp_url_array[1] == 'user' && $tmp_url_array[2] == 'add') {
 	$url_str = 'user/add';
 }

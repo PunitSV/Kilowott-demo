@@ -9,5 +9,6 @@ define('DBUSER','root');
 define('DBPASS','');
 define('DBNAME','kilowatt');
 
-$config['doc_root']     = '/';
+$config['project_folder']   = 'khushboo';
+$config['doc_root']     	= '/khushboo/';
 
