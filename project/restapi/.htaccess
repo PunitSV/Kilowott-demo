@@ -1,0 +1,15 @@
+
+	
+	
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteCond %{HTTPS} !on
+	#RewriteRule ^api/([0-9a-zA-Z_-]*)$ api.php?order_id=$1 [NC,L]
+	RewriteBase /restapi/
+	
+	# Rewrite URLs of the form 'x' to the form 'index.php?request=x'.
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} !index.php
+	RewriteRule (.*)$ index.php?request=$1
+</ifModule>
